@@ -13,6 +13,7 @@ export class UrlStoreService {
     const findDB = this.searchURL(shortened);
     if (findDB) {
       //update current +1
+      await this.updateURL(findDB._id, )
     } else {
       const url = new this.UrlModel({
         _id: uuid(),
