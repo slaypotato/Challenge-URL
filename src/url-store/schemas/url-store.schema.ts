@@ -5,14 +5,17 @@ export type URLDocument = URL & Document;
 
 @Schema()
 export class URL {
-    @Prop()
+    @Prop({required: true})
     _id: string;
 
-    @Prop()
+    @Prop({required: true})
     url: string;
 
-    @Prop()
+    @Prop({required: true})
     count: number;
+
+    @Prop({required: false})
+    __v: number;
 }
 
 export const URLSchema = SchemaFactory.createForClass(URL)

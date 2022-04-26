@@ -7,7 +7,11 @@ export class UrlStoreController {
 
   @Post()
   async postUrl(@Body() { url } ) {
-    this.appService.shortener(url);
-    return 'ok'
+    return this.appService.createURL(url);
+  }
+
+  @Get()
+  async getURL(@Body() { url } ){
+    return this.appService.searchURL(url);
   }
 }
